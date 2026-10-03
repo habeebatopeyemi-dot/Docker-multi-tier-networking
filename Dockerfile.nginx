@@ -1,0 +1,18 @@
+FROM nginx:alpine
+
+# Copy our custom index.html file into Nginx's default web directory
+COPY index.html /usr/share/nginx/html/index.html
+
+# Add custom reverse proxy configuration directly into Nginx
+RUN echo 'server { \
+    listen 80; \
+    location / { \
+        root /usr/share/nginx/html; \
+        index index.html; \
+    } \
+    location /api/ { \
+        proxy_pass http://backend-app:5000/; \
+    } \
+}' > /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
