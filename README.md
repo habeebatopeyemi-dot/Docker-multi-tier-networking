@@ -14,14 +14,14 @@ This repository demonstrates a secure, multi-tier container networking pattern u
 
 ## Project Structure
 
-```text```
+```text
 docker-network-demo/
 ├── index.html        # Frontend HTML
 ├── Dockerfile.nginx  # Nginx Reverse Proxy Dockerfile
 ├── server.js         # Express API
 ├── Dockerfile.node   # Express Backend Dockerfile
 └── README.md
-
+```
 ## How to Run
 
 ### Create Networks
